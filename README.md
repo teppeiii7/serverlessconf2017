@@ -26,6 +26,8 @@ Serverlessconf Tokyo 2017
 
 # 構成
 
+![image](image.jpg)
+
 ## Authentication
 
 * Cognito
