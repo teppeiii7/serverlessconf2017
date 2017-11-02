@@ -7,7 +7,7 @@
         <div class="col-md-12">
           <ul class="list-group" v-for="(feed, index) in feeds" v-bind:key="index">
             <li class="list-group-item">
-              <router-link to="/feeds">{{ feed.title }}</router-link>
+              <router-link to="/feeds">{{ feed.title }} : {{ feed.img_url }}</router-link>
             </li>
           </ul>
         </div>
@@ -34,15 +34,17 @@
     methods: {
       load: function () {
         const self = this
-        axios.create({
-          headers: []
+        self.error = {}
+        self.feeds = []
+        axios.get('https://wrctegoz0l.execute-api.ap-northeast-1.amazonaws.com/api/feeds', {
+          headers: {
+            'Content-Type': 'application/json'
+          }
         })
-        axios.get('https://wrctegoz0l.execute-api.ap-northeast-1.amazonaws.com/api/feeds')
-          .then((res) => {
-            self.stub = res
+          .then(res => {
             self.feeds = res.data.Items
           })
-          .catch((error) => {
+          .catch(error => {
             self.error = error
           })
       }
@@ -54,6 +56,4 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-
 </style>
