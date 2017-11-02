@@ -21,8 +21,12 @@ Serverlessconf Tokyo 2017
 * 独自ドメインは使わない(S3、API Gateway(Cloudfront)のドメインのまま)
   * カスタムドメインの配布(1h以上)待ってられない
 * 投稿一覧でページングはしない
+* 細かなエラー制御はしない
+  * HTTPステータスコードのハンドリング
 
 # 構成
+
+![image](https://raw.githubusercontent.com/teppeiii7/serverlessconf2017/master/image.jpeg)
 
 ## Authentication
 
