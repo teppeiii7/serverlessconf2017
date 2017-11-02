@@ -26,8 +26,6 @@ Serverlessconf Tokyo 2017
 
 # 構成
 
-![image](https://raw.githubusercontent.com/teppeiii7/serverlessconf2017/master/image.jpeg)
-
 ## Authentication
 
 * Cognito
@@ -42,6 +40,13 @@ Serverlessconf Tokyo 2017
 * Lambda
 * DynamoDB
 
-# API設計/テーブル設計のMemo
+# がしかし、、、
 
-https://docs.google.com/spreadsheets/d/1sCXuzlvYuZltv9q1qC8VK-sepEFXj6bt2d1wwvi9Fz0/edit#gid=0
+## できたこと
+
+* localでしか画面が動かない
+* API Gateway/Lambda/DynamoDBの通信までできた
+
+# はまったこと
+
+* Lambda ProxyでのCORSの有効化
