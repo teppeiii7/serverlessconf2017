@@ -4,25 +4,19 @@ const AWS = require('aws-sdk');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports = (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
 
-  // validation
-  if (typeof data.imageUrl !== 'string' && typeof data.title !== 'string') {
-    console.error('Validation Failed'); // eslint-disable-line no-console
-    callback(new Error('Couldn\'t create the shareImage item.'));
-    return;
-  }
-
   const params = {
-    TableName: 'shareImages',
+    TableName: 'feeds',
     Item: {
-      id: event.pathParameters.id,
+      feed_id: data.feed_id,
+      created_at: data.created_at,
       title: data.title,
-      imageUrl: data.imageUrl,
-      updatedAt: timestamp,
-    },
+      img_url: data.img_url,
+      modified_at: timestamp,
+    }
   };
 
   // update the share image info in the database

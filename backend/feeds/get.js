@@ -4,15 +4,15 @@ const AWS = require('aws-sdk');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports = (event, context, callback) => {
-  const params = {
+exports.handler = (event, context, callback) => {
+
+  var params = {
     TableName: 'feeds',
     Key: {
-      id: event.pathParameters.feed_id,
-    },
+      feed_id: event.pathParameters.feed_id,
+    }
   };
 
-  // fetch all todos from the database
   dynamoDb.get(params, (error, result) => {
     // handle potential errors
     if (error) {
