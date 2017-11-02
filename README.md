@@ -26,7 +26,7 @@ Serverlessconf Tokyo 2017
 
 # 構成
 
-![image](./image.jpg)
+![image](https://raw.githubusercontent.com/teppeiii7/serverlessconf2017/master/image.jpeg)
 
 ## Authentication
 
