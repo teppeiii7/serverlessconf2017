@@ -4,7 +4,7 @@ const AWS = require('aws-sdk');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports = (event, context, callback) => {
+exports.handler = (event, context, callback) => {
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
 
@@ -16,7 +16,7 @@ module.exports = (event, context, callback) => {
       title: data.title,
       img_url: data.img_url,
       modified_at: timestamp,
-    },
+    }
   };
 
   // update the share image info in the database

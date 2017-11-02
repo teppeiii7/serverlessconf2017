@@ -4,26 +4,21 @@ const AWS = require('aws-sdk');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports = (event, context, callback) => {
-  const params = {
-    TableName: 'feeds',
-    Key: {
-      id: event.pathParameters.feed_id,
-    }
-  };
+exports.handler = (event, context, callback) => {
+  console.log(event);
 
-  dynamoDb.get(params, (error, result) => {
+  dynamoDb.scan({TableName : 'feeds'}, (error, result) => {
     // handle potential errors
     if (error) {
       console.error(error);
-      callback(new Error('Couldn\'t fetch item.'));
+      callback(new Error('Couldn\'t fetch items.'));
       return;
     }
 
     // create a resonse
     const response = {
       statusCode: 200,
-      body: JSON.stringify(result.Item),
+      body: JSON.stringify(result),
     };
     callback(null, response);
   });

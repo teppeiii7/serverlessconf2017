@@ -1,0 +1,10 @@
+{
+  "name": "serverlessconf2017",
+  "version": "1.0.0",
+  "description": "serverlessconf2017",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^2.0.3"
+  }
+}
