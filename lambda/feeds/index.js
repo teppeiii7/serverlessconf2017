@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-disable global-require */
-
 module.exports = {
   create: require('./create'),
   delete: require('./delete'),

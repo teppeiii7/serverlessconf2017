@@ -9,10 +9,9 @@ module.exports = (event, context, callback) => {
     TableName: 'feeds',
     Key: {
       id: event.pathParameters.feed_id,
-    },
+    }
   };
 
-  // fetch all todos from the database
   dynamoDb.get(params, (error, result) => {
     // handle potential errors
     if (error) {

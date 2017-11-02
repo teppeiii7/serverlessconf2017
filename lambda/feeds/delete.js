@@ -12,7 +12,6 @@ module.exports = (event, context, callback) => {
     },
   };
 
-  // write the share image info to the database
   dynamoDb.delete(params, (error) => {
     // handle potential errors
     if (error) {
