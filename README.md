@@ -2,9 +2,25 @@
 
 Serverlessconf Tokyo 2017
 
-# やること
+# 掲示板アプリの開発
 
-* 掲示板アプリの作成
+## やること
+
+* サーバーレスで組む
+* 認証はCognito使う
+* ログインしないと使えないUIにする
+* ログイン画面、投稿一覧、投稿詳細
+* GUIリソースはS3で管理する
+
+## 余裕あったらやること
+
+* S3へのアクセスをCloudwatchログに保管してES連携して全文検索
+
+## 諦めること
+
+* 独自ドメインは使わない(S3、API Gateway(Cloudfront)のドメインのまま)
+  * カスタムドメインの配布(1h以上)待ってられない
+* 投稿一覧でページングはしない
 
 # 構成
 
@@ -14,7 +30,6 @@ Serverlessconf Tokyo 2017
 
 ## Frontend
 
-* Cloudfront or API Gateway
 * S3
 
 ## Backend
@@ -23,6 +38,6 @@ Serverlessconf Tokyo 2017
 * Lambda
 * DynamoDB
 
-# Memo
+# API設計/テーブル設計のMemo
 
 https://docs.google.com/spreadsheets/d/1sCXuzlvYuZltv9q1qC8VK-sepEFXj6bt2d1wwvi9Fz0/edit#gid=0
