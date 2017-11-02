@@ -1,11 +1,13 @@
 'use strict';
+console.log('Loading function...');
 
 const uuid = require('uuid');
 const AWS = require('aws-sdk');
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
-module.exports = (event, context, callback) => {
+exports.handler = (event, context, callback) => {
+  console.log('start...');
   const timestamp = new Date().getTime();
   const data = JSON.parse(event.body);
   const feed_id = uuid.v1();
