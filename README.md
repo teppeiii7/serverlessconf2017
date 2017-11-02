@@ -22,3 +22,7 @@ Serverlessconf Tokyo 2017
 * API Gateway
 * Lambda
 * DynamoDB
+
+# Memo
+
+https://docs.google.com/spreadsheets/d/1sCXuzlvYuZltv9q1qC8VK-sepEFXj6bt2d1wwvi9Fz0/edit#gid=0
