@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container">
-    <img src="./assets/logo.png">
+    <h1><a href="/">Serverlessconf 2017</a></h1>
+    <p>Current route name: {{ $route.name }}</p>
     <router-view/>
   </div>
 </template>

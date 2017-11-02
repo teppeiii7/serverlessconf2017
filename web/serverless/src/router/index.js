@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Feeds from '@/components/Feeds'
 import Comments from '@/components/Comments'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -15,12 +15,7 @@ export default new Router({
     },
     {
       path: '/feeds',
-      name: 'ITA',
-      component: Feeds
-    },
-    {
-      path: '/comments',
-      name: 'ITA',
+      name: 'comments',
       component: Comments
     }
   ]
